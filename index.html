@@ -1,0 +1,824 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Estetik | Pandya Rasendriya</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        :root {
+            --cream: #FFF5E4;
+            --pink: #FFD1D1;
+            --rose: #FF9494;
+            --dark-rose: #FF6B6B;
+            --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--cream);
+            color: #3F3F3F;
+            overflow-x: hidden;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: var(--box-shadow);
+            padding: 2rem;
+        }
+
+        /* Header Estetik */
+        header {
+            position: fixed;
+            width: 100%;
+            z-index: 100;
+            padding: 1.5rem 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--dark-rose);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 3rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #5E5E5E;
+            font-weight: 500;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--dark-rose);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--dark-rose);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section Estetik */
+        #hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 0 10%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            flex: 1;
+            z-index: 2;
+        }
+
+        .hero-image {
+            flex: 1;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-image img {
+            width: 100%;
+            max-width: 500px;
+            filter: drop-shadow(var(--box-shadow));
+            animation: float 6s ease-in-out infinite;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, var(--rose), var(--dark-rose));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: #6E6E6E;
+            margin-bottom: 2rem;
+            max-width: 600px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem 2rem;
+            background: linear-gradient(45deg, var(--rose), var(--dark-rose));
+            color: white;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 10px 20px rgba(255, 148, 148, 0.3);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(255, 148, 148, 0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--rose);
+            color: var(--dark-rose);
+            margin-left: 1rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            color: #6E6E6E;
+            font-size: 1.5rem;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--dark-rose);
+            transform: translateY(-5px);
+        }
+
+        /* About Section */
+        #tentang {
+            padding: 6rem 10%;
+            position: relative;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 4rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(45deg, var(--rose), var(--dark-rose));
+        }
+
+        .about-container {
+            display: flex;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-image {
+            flex: 1;
+        }
+
+        .about-image img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 20px;
+            box-shadow: var(--box-shadow);
+        }
+
+        .about-content {
+            flex: 1.5;
+        }
+
+        .about-text {
+            margin-bottom: 1.5rem;
+            color: #5E5E5E;
+            line-height: 1.8;
+        }
+
+        /* Skills Section */
+        #kemampuan {
+            padding: 6rem 10%;
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-card {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--box-shadow);
+            transition: all 0.3s;
+            text-align: center;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .skill-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark-rose);
+        }
+
+        .skill-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .skill-desc {
+            color: #6E6E6E;
+            font-size: 0.9rem;
+        }
+
+        /* Projects Section */
+        #projek {
+            padding: 6rem 10%;
+            background-color: rgba(255, 209, 209, 0.1);
+        }
+
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .project-card {
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: all 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .project-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .project-card:hover .project-image img {
+            transform: scale(1.1);
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-tag {
+            background-color: var(--pink);
+            color: var(--dark-rose);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 500;
+        }
+
+        .project-actions {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        /* Contact Section */
+        #kontak {
+            padding: 6rem 10%;
+        }
+
+        .contact-container {
+            display: flex;
+            gap: 3rem;
+        }
+
+        .contact-info {
+            flex: 1;
+        }
+
+        .contact-card {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background-color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--box-shadow);
+            color: var(--dark-rose);
+            font-size: 1.2rem;
+        }
+
+        .contact-text h4 {
+            font-weight: 600;
+            margin-bottom: 0.2rem;
+        }
+
+        .contact-text p {
+            color: #6E6E6E;
+            font-size: 0.9rem;
+        }
+
+        .contact-form {
+            flex: 1.5;
+            background-color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--box-shadow);
+        }
+
+        .input-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .input-group input,
+        .input-group textarea {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 1px solid #E2E8F0;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+
+        .input-group input:focus,
+        .input-group textarea:focus {
+            border-color: var(--rose);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(255, 148, 148, 0.2);
+        }
+
+        .input-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        /* Floating Elements */
+        .floating-element {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.2;
+            z-index: 0;
+        }
+
+        .floating-element-1 {
+            width: 300px;
+            height: 300px;
+            background-color: var(--rose);
+            top: 10%;
+            left: -150px;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .floating-element-2 {
+            width: 200px;
+            height: 200px;
+            background-color: var(--pink);
+            bottom: 10%;
+            right: -100px;
+            animation: float 6s ease-in-out infinite 2s;
+        }
+
+        /* Footer */
+        footer {
+            background-color: white;
+            padding: 2rem 10%;
+            text-align: center;
+            color: #6E6E6E;
+            font-size: 0.9rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links a {
+            color: #6E6E6E;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--dark-rose);
+        }
+
+        /* Animations */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .about-container,
+            .contact-container {
+                flex-direction: column;
+            }
+
+            .hero-image {
+                order: -1;
+                margin-bottom: 2rem;
+            }
+
+            .contact-info {
+                margin-bottom: 3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: 0;
+                width: 70%;
+                height: 100vh;
+                background-color: white;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 2rem;
+                transform: translateX(100%);
+                transition: transform 0.5s ease-in-out;
+                box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-links.active {
+                transform: translateX(0);
+            }
+
+            .hamburger {
+                display: block;
+                font-size: 1.5rem;
+                color: var(--dark-rose);
+                z-index: 101;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Background Elements -->
+    <div class="floating-element floating-element-1"></div>
+    <div class="floating-element floating-element-2"></div>
+
+    <!-- Header -->
+    <header>
+        <a href="#" class="logo">Pandya</a>
+        <nav>
+            <div class="nav-links">
+                <a href="#hero">Beranda</a>
+                <a href="#tentang">Tentang</a>
+                <a href="#kemampuan">Kemampuan</a>
+                <a href="#projek">Projek</a>
+                <a href="#kontak">Kontak</a>
+            </div>
+            <i class="hamburger" data-feather="menu"></i>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="hero-content">
+            <p class="hero-subtitle">Halo, nama saya</p>
+            <h1>Pandya Rasendriya</h1>
+            <p class="hero-subtitle">Siswa XI RPL 2 SMKN 2 Mataram | Web Developer</p>
+            <div>
+                <a href="#projek" class="btn">Lihat Projek <i data-feather="arrow-right"></i></a>
+                <a href="#kontak" class="btn btn-outline">Hubungi Saya</a>
+            </div>
+            <div class="social-links">
+                <a href="#"><i data-feather="github"></i></a>
+                <a href="#"><i data-feather="instagram"></i></a>
+                <a href="#"><i data-feather="linkedin"></i></a>
+                <a href="#"><i data-feather="mail"></i></a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="gede pandya.jpg" alt="Potret Pandya Rasendriya sedang bekerja di depan laptop dengan tampilan kode programming" />
+        </div>
+    </section>
+
+    <!-- Tentang Saya Section -->
+    <section id="tentang">
+        <div class="title">
+            <h2>Tentang Saya</h2>
+        </div>
+        <div class="about-container glass-card">
+            <div class="about-image">
+                <img src="gede pandya.jpg" alt="Pandya Rasendriya sedang serius mengerjakan project web development di ruang kerja minimalis" />
+            </div>
+            <div class="about-content">
+                <p class="about-text">
+                    Saya I Gede Pandya Rasendriya, siswa kelas XI Rekayasa Perangkat Lunak di SMKN 2 Mataram. 
+                    Saya memiliki passion di bidang pengembangan web dan teknologi kreatif.
+                </p>
+                <p class="about-text">
+                    Sejak mengenal pemrograman, saya terus mengembangkan skill di bidang front-end development. 
+                    Saya senang menciptakan antarmuka yang indah dan fungsional dengan teknologi modern.
+                </p>
+                <p class="about-text">
+                    Selain akademik, saya aktif mengikuti kompetisi coding dan membuat proyek-proyek pribadi untuk 
+                    memperluas pengetahuan dan portofolio saya.
+                </p>
+                <div class="btn-container">
+                    <a href="#" class="btn">Download CV</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kemampuan Section -->
+    <section id="kemampuan">
+        <div class="title">
+            <h2>Kemampuan Saya</h2>
+        </div>
+        <div class="skills-container">
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <i data-feather="code"></i>
+                </div>
+                <h3 class="skill-title">Frontend Development</h3>
+                <p class="skill-desc">
+                    Membangun antarmuka web responsif dan interaktif menggunakan HTML5, CSS3, dan JavaScript ES6+.
+                </p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <i data-feather="layout"></i>
+                </div>
+                <h3 class="skill-title">UI/UX Design</h3>
+                <p class="skill-desc">
+                    Menerapkan prinsip desain modern untuk menciptakan pengalaman pengguna yang intuitif dan menyenangkan.
+                </p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <i data-feather="smartphone"></i>
+                </div>
+                <h3 class="skill-title">Responsive Design</h3>
+                <p class="skill-desc">
+                    Membuat website yang tampil sempurna di semua perangkat dengan pendekatan mobile-first.
+                </p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <i data-feather="git-merge"></i>
+                </div>
+                <h3 class="skill-title">Version Control</h3>
+                <p class="skill-desc">
+                    Menggunakan Git dan GitHub untuk kolaborasi dan mengelola versi kode dengan efisien.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projek Section -->
+    <section id="projek">
+        <div class="title">
+            <h2>Projek Terbaru</h2>
+        </div>
+        <div class="projects-container">
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="download (5).jpeg" alt="Tampilan website e-commerce dengan desain modern dan warna pastel" />
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">E-Commerce Website</h3>
+                    <div class="project-tags">
+                        <span class="project-tag">HTML</span>
+                        <span class="project-tag">CSS</span>
+                        <span class="project-tag">JavaScript</span>
+                    </div>
+                    <p>Website toko online dengan fitur keranjang belanja interaktif, checkout, dan responsif.</p>
+                    <div class="project-actions">
+                        <a href="#" class="btn">Demo</a>
+                        <a href="#" class="btn btn-outline">Source Code</a>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="image-2025-02-13T111710.572.webp" alt="Dashboard aplikasi manajemen tugas dengan grafik dan kalender" />
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Task Management App</h3>
+                    <div class="project-tags">
+                        <span class="project-tag">JavaScript</span>
+                        <span class="project-tag">LocalStorage</span>
+                    </div>
+                    <p>Aplikasi untuk mengelola tugas harian dengan fitur drag & drop dan penyimpanan lokal.</p>
+                    <div class="project-actions">
+                        <a href="#" class="btn">Demo</a>
+                        <a href="#" class="btn btn-outline">Source Code</a>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="download (4).jpeg" alt="Halaman portofolio kreatif dengan animasi scroll dan efek parallax" />
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Creative Portfolio</h3>
+                    <div class="project-tags">
+                        <span class="project-tag">CSS3</span>
+                        <span class="project-tag">Animasi</span>
+                    </div>
+                    <p>Website portofolio dengan desain kreatif mengggunakan animasi CSS dan efek scroll.</p>
+                    <div class="project-actions">
+                        <a href="#" class="btn">Demo</a>
+                        <a href="#" class="btn btn-outline">Source Code</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kontak Section -->
+    <section id="kontak">
+        <div class="title">
+            <h2>Hubungi Saya</h2>
+        </div>
+        <div class="contact-container">
+            <div class="contact-info">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i data-feather="mail"></i>
+                    </div>
+                    <div class="contact-text">
+                        <h4>Email</h4>
+                        <p>gedepandya425.gmail.com</p>
+                    </div>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i data-feather="map-pin"></i>
+                    </div>
+                    <div class="contact-text">
+                        <h4>Lokasi</h4>
+                        <p>SMKN 2 Mataram, Nusa Tenggara Barat</p>
+                    </div>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i data-feather="phone"></i>
+                    </div>
+                    <div class="contact-text">
+                        <h4>Telepon</h4>
+                        <p>+62 123 4567 890</p>
+                    </div>
+                </div>
+            </div>
+            <form class="contact-form glass-card">
+                <div class="input-group">
+                    <label for="nama">Nama Lengkap</label>
+                    <input type="text" id="nama" placeholder="Masukkan nama Anda">
+                </div>
+                <div class="input-group">
+                    <label for="email">Alamat Email</label>
+                    <input type="email" id="email" placeholder="Masukkan email Anda">
+                </div>
+                <div class="input-group">
+                    <label for="pesan">Pesan Anda</label>
+                    <textarea id="pesan" placeholder="Tulis pesan Anda di sini..."></textarea>
+                </div>
+                <button type="submit" class="btn">Kirim Pesan <i data-feather="send"></i></button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-links">
+            <a href="#hero">Beranda</a>
+            <a href="#tentang">Tentang</a>
+            <a href="#kemampuan">Kemampuan</a>
+            <a href="#projek">Projek</a>
+            <a href="#kontak">Kontak</a>
+        </div>
+        <p>&copy; 2023 Portfolio Pandya Rasendriya. Dibuat dengan ❤ di Mataram.</p>
+    </footer>
+
+    <script>
+        // Feather Icons
+        feather.replace();
+
+        // Mobile Menu Toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.innerHTML = navLinks.classList.contains('active') 
+                ? feather.icons.x.toSvg() 
+                : feather.icons.menu.toSvg();
+        });
+
+        // Smooth Scrolling for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                if (navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                    hamburger.innerHTML = feather.icons.menu.toSvg();
+                }
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Form Submission
+        const contactForm = document.querySelector('.contact-form');
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Pesan Anda telah terkirim! Saya akan menghubungi Anda segera.');
+            contactForm.reset();
+        });
+    </script>
+</body>
+</html>
